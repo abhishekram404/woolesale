@@ -1,0 +1,17 @@
+.topNavbar {
+  background-color: black;
+  padding: 8px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.left,
+.right {
+  color: white;
+  font-family: "Mulish";
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.9rem;
+}
