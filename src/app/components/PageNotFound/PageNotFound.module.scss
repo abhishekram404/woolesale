@@ -3,6 +3,20 @@
   display: grid;
   grid-template-columns: 0.4fr 0.6fr;
   place-items: center;
+  padding: 30px;
+}
+
+@media only screen and (max-width: 500px) {
+  .pageNotFound {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+  }
+  .right {
+    > img {
+      width: 60%;
+    }
+  }
 }
 
 .left {
