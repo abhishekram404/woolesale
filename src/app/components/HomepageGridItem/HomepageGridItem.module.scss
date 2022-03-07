@@ -1,12 +1,11 @@
 .homepageGridItem {
-  //   background-color: black;
-  // border: 3px solid black;
+  border: 1px solid rgba($color: #000000, $alpha: 0.3);
   box-shadow: 1px 1px 5px rgba($color: #000000, $alpha: 0.2);
   padding: 15px;
   border-radius: 2px;
-  flex: 1;
-  min-width: 350px;
-  max-width: 400px;
+
+  max-height: 400px;
+  min-height: 350px;
   display: flex;
   flex-direction: column;
   transition: 0.4s;
@@ -16,17 +15,20 @@
   }
 }
 
-.details {
-  flex: 1;
-}
+// .details {
+//   // flex: 1;
+// }
 
 .productImageContainer {
   width: 100%;
   display: grid;
   place-items: center;
+  padding: 30px 10px;
+  flex: 1;
 }
 .productImage {
-  max-width: 200px;
+  max-width: 150px;
+  max-height: 150px;
 }
 
 .productName {
