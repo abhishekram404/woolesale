@@ -1,9 +1,8 @@
 import React from "react";
 import styles from "./TopNavbar.module.scss";
 import { MdEmail, MdPhone } from "react-icons/md";
-type Props = {};
 
-export default function TopNavbar({}: Props) {
+const TopNavbar = React.memo(() => {
   return (
     <div className={styles.topNavbar}>
       <div className={styles.left}>
@@ -15,4 +14,6 @@ export default function TopNavbar({}: Props) {
       </div>
     </div>
   );
-}
+});
+
+export default TopNavbar;

@@ -1,0 +1,21 @@
+.homepage {
+  min-height: 100vh;
+  padding: 30px;
+}
+
+.pageTitle {
+  font-family: "Cabin", sans-serif;
+  color: rgba($color: #000000, $alpha: 0.9);
+  margin-bottom: 20px;
+}
+
+.productsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, auto));
+  gap: 30px;
+}
+@media only screen and(max-width:640px) {
+  .homepage {
+    padding: 20px;
+  }
+}

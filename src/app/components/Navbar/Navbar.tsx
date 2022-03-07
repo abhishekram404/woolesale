@@ -1,8 +1,7 @@
 import React from "react";
 import styles from "./Navbar.module.scss";
 
-export default function Navbar() {
-  console.log(styles);
+const Navbar = React.memo(() => {
   return (
     <nav className={styles.navbar}>
       <a href="/" className={styles.navbarBrand}>
@@ -10,4 +9,6 @@ export default function Navbar() {
       </a>
     </nav>
   );
-}
+});
+
+export default Navbar;
