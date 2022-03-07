@@ -3,6 +3,7 @@ import BackButton from "app/components/BackButton/BackButton";
 import styles from "./Cart.module.scss";
 import CartItem from "app/components/CartItem/CartItem";
 import { Link } from "react-router-dom";
+import CheckoutSection from "app/components/CheckoutSection/CheckoutSection";
 const Cart = React.memo(() => {
   return (
     <div className={styles.cart}>
@@ -28,9 +29,7 @@ const Cart = React.memo(() => {
           <CartItem />
           <CartItem />
         </section>
-        <section className={styles.checkoutSection} id="checkoutSection">
-          Checkout Section
-        </section>
+        <CheckoutSection />
       </main>
     </div>
   );
