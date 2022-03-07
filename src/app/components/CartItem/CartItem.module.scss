@@ -57,11 +57,24 @@
   > button {
     width: 35px;
     height: 35px;
-    display: grid;
-    place-items: center;
+    padding: 5px;
+    border-radius: 1px;
   }
 }
 .total {
   font-family: "Mulish", sans-serif;
   font-weight: 500;
+}
+
+@media only screen and (max-width: 1000px) {
+  .cartItem {
+    gap: 10px;
+    grid-template-columns: 60px auto 0.2fr 0.2fr;
+  }
+  .quantitySetter {
+    > button {
+      width: 30px;
+      height: 30px;
+    }
+  }
 }

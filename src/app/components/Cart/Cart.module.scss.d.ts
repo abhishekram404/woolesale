@@ -6,4 +6,5 @@ export const cartSection: string;
 export const checkoutSection: string;
 export const bodyColumn: string;
 export const cartSummary: string;
-export const hr: string;
+export const summaryRow: string;
+export const scrollToCheckoutButton: string;

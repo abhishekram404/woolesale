@@ -30,7 +30,7 @@ const CartItem = () => {
       </div>
       <div className={styles.totalColumn}>
         <h4 className={styles.title}>Total</h4>
-        <h3 className={styles.total}>$ 3600</h3>
+        <h3 className={styles.total}>$3600</h3>
       </div>
     </div>
   );

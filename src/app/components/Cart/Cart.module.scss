@@ -5,20 +5,20 @@
 .pageTitleRow {
   display: grid;
   align-items: center;
-  grid-template-columns: 100px 0.9fr;
+  grid-template-columns: 100px 0.85fr;
   border-bottom: 1px solid rgba($color: #000000, $alpha: 0.1);
   padding-bottom: 20px;
 }
 
 .pageTitle {
-  justify-self: center;
   font-family: "Cabin", sans-serif;
   font-size: 2rem;
+  margin: 0 auto;
 }
 
 .bodyColumn {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.2fr 0.8fr;
   gap: 20px;
   padding: 30px 0;
 }
@@ -35,8 +35,40 @@
     }
   }
 }
+.summaryRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+
+.scrollToCheckoutButton {
+  text-decoration: none;
+  background-color: #000000;
+  color: #fff;
+  padding: 10px;
+  border-radius: 2px;
+  display: none;
+}
 
 .cartSummary {
   font-family: "Mulish", sans-serif;
-  padding-bottom: 10px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .cart {
+    padding: 20px;
+  }
+  .pageTitleRow {
+    padding-bottom: 15px;
+  }
+  .bodyColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 0;
+  }
+  .scrollToCheckoutButton {
+    display: inline-flex;
+  }
 }
