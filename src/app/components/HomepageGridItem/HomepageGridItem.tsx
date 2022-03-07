@@ -2,6 +2,8 @@ import React from "react";
 import styles from "./HomepageGridItem.module.scss";
 import productImage from "app/assets/mac2.jpg";
 import { MdOutlineAddShoppingCart } from "react-icons/md";
+import PrimaryButton from "app/components/Buttons/PrimaryButton/PrimaryButton";
+import SecondaryButton from "app/components/Buttons/SecondaryButton/SecondaryButton";
 export default function HomepageGridItem() {
   return (
     <div className={styles.homepageGridItem}>
@@ -13,10 +15,10 @@ export default function HomepageGridItem() {
         <h3 className={styles.productPrice}>$1499</h3>
 
         <div className={styles.actionButtonsGroup}>
-          <button>Instant buy</button>
-          <button>
+          <SecondaryButton> Instant buy </SecondaryButton>
+          <PrimaryButton>
             <MdOutlineAddShoppingCart />
-          </button>
+          </PrimaryButton>
         </div>
       </div>
     </div>
