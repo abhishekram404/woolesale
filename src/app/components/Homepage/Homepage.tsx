@@ -2,9 +2,8 @@ import React from "react";
 import HomepageGridItem from "app/components/HomepageGridItem/HomepageGridItem";
 import styles from "./Homepage.module.scss";
 import { products } from "app/productsData";
-type Props = {};
 
-export default function Homepage({}: Props) {
+export default function Homepage() {
   return (
     <div className={styles.homepage}>
       <h2 className={styles.pageTitle}>Featured products</h2>

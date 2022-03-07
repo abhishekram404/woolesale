@@ -12,3 +12,9 @@
   font-weight: 800;
   letter-spacing: 3px;
 }
+
+@media only screen and(max-width:640px) {
+  .navbar {
+    padding: 10px 20px;
+  }
+}

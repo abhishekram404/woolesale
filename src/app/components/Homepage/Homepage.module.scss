@@ -14,3 +14,8 @@
   grid-template-columns: repeat(auto-fit, minmax(350px, auto));
   gap: 30px;
 }
+@media only screen and(max-width:640px) {
+  .homepage {
+    padding: 20px;
+  }
+}
