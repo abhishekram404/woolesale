@@ -5,3 +5,5 @@ export const pageTitle: string;
 export const cartSection: string;
 export const checkoutSection: string;
 export const bodyColumn: string;
+export const cartSummary: string;
+export const hr: string;
