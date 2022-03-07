@@ -1,0 +1,80 @@
+.cartItem {
+  padding: 15px 0;
+  display: grid;
+  grid-template-columns: 60px 0.6fr 0.2fr 0.2fr;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.imgCont {
+  width: 60px;
+  height: 60px;
+  padding: 5px;
+  border: 1px solid rgba($color: #000000, $alpha: 0.1);
+  display: grid;
+  place-items: center;
+  align-self: center;
+  > img {
+    max-width: 45px;
+    max-height: 45px;
+  }
+}
+.detailsColumn {
+  align-self: center;
+}
+
+.detailsColumn,
+.quantityColumn,
+.totalColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.productName,
+.title {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 500;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+.title {
+  margin-bottom: 15px;
+}
+.productPrice {
+  font-family: "Mulish", sans-serif;
+  font-weight: 400;
+}
+
+.quantityColumn,
+.totalColumn {
+  align-items: center;
+}
+.quantitySetter {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  > button {
+    width: 35px;
+    height: 35px;
+    padding: 5px;
+    border-radius: 1px;
+  }
+}
+.total {
+  font-family: "Mulish", sans-serif;
+  font-weight: 500;
+}
+
+@media only screen and (max-width: 1000px) {
+  .cartItem {
+    gap: 10px;
+    grid-template-columns: 60px auto 0.2fr 0.2fr;
+  }
+  .quantitySetter {
+    > button {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
