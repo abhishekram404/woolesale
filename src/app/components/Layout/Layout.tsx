@@ -4,6 +4,7 @@ import Navbar from "app/components/Navbar/Navbar";
 import Homepage from "app/components/Homepage/Homepage";
 import Cart from "app/components/Cart/Cart";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import PageNotFound from "app/components/PageNotFound/PageNotFound";
 const Layout = () => {
   return (
     <Router>
@@ -13,7 +14,7 @@ const Layout = () => {
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="*" element={<h1>Page not found</h1>} />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </Router>
   );

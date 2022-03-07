@@ -1,0 +1,38 @@
+.pageNotFound {
+  height: 85vh;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+  display: grid;
+  grid-template-columns: 0.4fr 0.6fr;
+  place-items: center;
+}
+
+.left {
+  display: flex;
+  // justify-content: flex-start;
+  // align-items: center;
+  flex-direction: column;
+
+  > h1,
+  h2 {
+    font-family: "Cabin", sans-serif;
+    margin-bottom: 20px;
+  }
+  > h1 {
+    font-size: 4rem;
+  }
+
+  > h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+}
+.right {
+  display: grid;
+  place-items: center;
+  > img {
+    width: 90%;
+  }
+}
