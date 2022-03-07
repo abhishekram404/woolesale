@@ -1,3 +1,23 @@
 .cart {
   padding: 30px;
 }
+
+.pageTitleRow {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 100px 0.9fr;
+  border-bottom: 1px solid rgba($color: #000000, $alpha: 0.2);
+  padding-bottom: 20px;
+}
+
+.pageTitle {
+  justify-self: center;
+  font-family: "Cabin", sans-serif;
+  font-size: 2rem;
+}
+
+.bodyColumn {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
