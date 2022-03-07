@@ -4,10 +4,11 @@ import { MdOutlineAddShoppingCart } from "react-icons/md";
 import PrimaryButton from "app/components/Buttons/PrimaryButton/PrimaryButton";
 import SecondaryButton from "app/components/Buttons/SecondaryButton/SecondaryButton";
 import { IHomepageGridItem } from "app/Interfaces/IHomepageGridItem";
+import { motion } from "framer-motion";
 const HomepageGridItem = React.memo(
-  ({ name, price, productImages }: IHomepageGridItem) => {
+  ({ name, price, productImages, ...props }: IHomepageGridItem) => {
     return (
-      <div className={styles.homepageGridItem}>
+      <motion.div className={styles.homepageGridItem} {...props}>
         <div className={styles.productImageContainer}>
           <img
             src={productImages[0]}
@@ -28,7 +29,7 @@ const HomepageGridItem = React.memo(
             </PrimaryButton>
           </div>
         </div>
-      </div>
+      </motion.div>
     );
   }
 );
