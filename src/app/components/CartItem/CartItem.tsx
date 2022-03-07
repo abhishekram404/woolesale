@@ -6,7 +6,7 @@ import PrimaryButton from "../Buttons/PrimaryButton/PrimaryButton";
 import { FiPlus } from "react-icons/fi";
 import { HiMinus } from "react-icons/hi";
 
-const CartItem = () => {
+const CartItem = React.memo(() => {
   return (
     <div className={styles.cartItem}>
       <div className={styles.imgCont}>
@@ -34,6 +34,6 @@ const CartItem = () => {
       </div>
     </div>
   );
-};
+});
 
 export default CartItem;

@@ -3,7 +3,7 @@ import BackButton from "app/components/BackButton/BackButton";
 import styles from "./Cart.module.scss";
 import CartItem from "app/components/CartItem/CartItem";
 import { Link } from "react-router-dom";
-const Cart = () => {
+const Cart = React.memo(() => {
   return (
     <div className={styles.cart}>
       <div className={styles.pageTitleRow}>
@@ -34,6 +34,6 @@ const Cart = () => {
       </main>
     </div>
   );
-};
+});
 
 export default Cart;

@@ -4,7 +4,7 @@ import notFoundSvg from "app/assets/404.svg";
 import PrimaryButton from "../Buttons/PrimaryButton/PrimaryButton";
 import { Link } from "react-router-dom";
 
-const PageNotFound = () => {
+const PageNotFound = React.memo(() => {
   return (
     <div className={styles.pageNotFound}>
       <div className={styles.left}>
@@ -19,6 +19,6 @@ const PageNotFound = () => {
       </div>
     </div>
   );
-};
+});
 
 export default PageNotFound;

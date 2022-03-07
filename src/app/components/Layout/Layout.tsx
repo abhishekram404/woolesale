@@ -5,7 +5,7 @@ import Homepage from "app/components/Homepage/Homepage";
 import Cart from "app/components/Cart/Cart";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import PageNotFound from "app/components/PageNotFound/PageNotFound";
-const Layout = () => {
+const Layout = React.memo(() => {
   return (
     <Router>
       <TopNavbar />
@@ -18,6 +18,6 @@ const Layout = () => {
       </Routes>
     </Router>
   );
-};
+});
 
 export default Layout;
