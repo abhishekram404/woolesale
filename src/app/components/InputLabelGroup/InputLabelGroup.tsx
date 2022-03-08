@@ -1,5 +1,6 @@
 import { IInputLabelGroup } from "app/Interfaces/IInputLabelGroup";
 import React from "react";
+import { Field } from "formik";
 import styles from "./InputLabelGroup.module.scss";
 const InputLabelGroup = ({
   name,
@@ -13,7 +14,13 @@ const InputLabelGroup = ({
       <label htmlFor={name} className={styles.label}>
         {label} {required && <span>*</span>}
       </label>
-      <input type={type} id={name} className={styles.input} {...props} />
+      <Field
+        type={type}
+        id={name}
+        name={name}
+        className={styles.input}
+        {...props}
+      />
     </div>
   );
 };
