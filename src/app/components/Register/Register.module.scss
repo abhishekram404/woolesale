@@ -1,0 +1,34 @@
+.register {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.form {
+  border: 1px solid rgba($color: #000000, $alpha: 0.1);
+  padding: 20px;
+  > button[type="submit"] {
+    width: 100%;
+  }
+}
+.formTitle {
+  font-family: "Cabin", sans-serif;
+  margin-bottom: 10px;
+}
+
+.formDescription {
+  font-family: "Mulish", sans-serif;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  font-weight: 300;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba($color: #000000, $alpha: 0.1);
+}
+
+@media only screen and(max-width:375px) {
+  .register {
+    padding: 10px;
+  }
+}

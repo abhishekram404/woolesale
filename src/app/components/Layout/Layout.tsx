@@ -5,6 +5,7 @@ import Homepage from "app/components/Homepage/Homepage";
 import Cart from "app/components/Cart/Cart";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import PageNotFound from "app/components/PageNotFound/PageNotFound";
+import Register from "app/components/Register/Register";
 const Layout = React.memo(() => {
   return (
     <Router>
@@ -13,6 +14,7 @@ const Layout = React.memo(() => {
 
       <Routes>
         <Route path="/" element={<Homepage />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
