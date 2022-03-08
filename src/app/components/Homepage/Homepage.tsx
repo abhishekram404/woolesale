@@ -9,8 +9,10 @@ export default function Homepage() {
     <AnimatePresence>
       <motion.div
         className={styles.homepage}
-        initial={{ x: "1000px" }}
-        animate={{ x: 0 }}
+        // initial={{ x: "1000px" }}
+        // animate={{ x: 0 }}
+        initial="hidden"
+        animate="show"
         exit={{ opacity: 0 }}
       >
         <h2 className={styles.pageTitle}>Featured products</h2>
@@ -22,8 +24,9 @@ export default function Homepage() {
                 price={product.price}
                 productImages={product.productImages}
                 key={index}
-                initial={{ scale: 1.2, opacity: 0 }}
+                initial={{ scale: 1.1, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
+                // viewport={{ once: true }}
                 style={{ originX: 0.5, originY: 0.5 }}
                 transition={{ delay: index * 0.3 }}
               />

@@ -1,5 +1,5 @@
 .cart {
-  padding: 30px;
+  padding: 20px 30px;
   background-color: #fff;
   z-index: 1;
 }
@@ -19,8 +19,10 @@
 }
 
 .bodyColumn {
+  width: 80%;
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-columns: 1.4fr 0.6fr;
   gap: 20px;
   padding: 30px 0;
   > section {

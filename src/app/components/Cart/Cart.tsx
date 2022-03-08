@@ -16,6 +16,7 @@ const Cart = React.memo(() => {
         initial={{ x: "1000px" }}
         animate={{ x: 0 }}
         exit={{ x: "1000px" }}
+        transition={{ stiffness: 0 }}
       >
         <div className={styles.pageTitleRow}>
           <BackButton />
