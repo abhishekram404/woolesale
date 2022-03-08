@@ -2,8 +2,9 @@
   min-height: 80vh;
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 20px;
+  align-items: flex-start;
+  padding: 40px 20px;
+  gap: 20px;
 }
 
 .form {
@@ -26,7 +27,28 @@
   padding-bottom: 20px;
   border-bottom: 1px solid rgba($color: #000000, $alpha: 0.1);
 }
+.helperSection {
+  border: 1px solid rgba($color: #000000, $alpha: 0.1);
+  padding: 15px;
+  > h3 {
+    font-family: "Work Sans";
+    font-weight: 500;
+  }
+}
 
+.passwordRulesList {
+  list-style-type: none;
+}
+
+.passwordRule {
+  margin: 10px 0;
+  font-family: "Mulish", sans-serif;
+  display: flex;
+  align-items: center;
+  > svg {
+    margin-right: 10px;
+  }
+}
 @media only screen and(max-width:375px) {
   .register {
     padding: 10px;
