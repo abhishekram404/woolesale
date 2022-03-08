@@ -1,6 +1,6 @@
 import { IInputLabelGroup } from "app/Interfaces/IInputLabelGroup";
 import React, { useState } from "react";
-import { Field } from "formik";
+import { Field, ErrorMessage } from "formik";
 import styles from "./InputLabelGroup.module.scss";
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
 const InputLabelGroup = ({
@@ -43,6 +43,9 @@ const InputLabelGroup = ({
           </button>
         )}
       </div>
+      <small className={styles.errorMessage}>
+        <ErrorMessage name={name} />
+      </small>
     </div>
   );
 };

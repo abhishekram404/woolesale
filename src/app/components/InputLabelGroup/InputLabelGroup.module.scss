@@ -8,7 +8,7 @@
   margin-bottom: 5px;
   font-family: "Work Sans", sans-serif;
   > span {
-    color: rgb(197, 0, 0);
+    color: #c50000;
   }
 }
 
@@ -27,4 +27,9 @@
   background-color: transparent;
   border: 1px solid rgba($color: #000000, $alpha: 0.2);
   border-left: none;
+}
+
+.errorMessage {
+  color: #c50000;
+  margin-top: 3px;
 }
