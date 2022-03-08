@@ -6,6 +6,8 @@ button {
   font-size: 1rem;
   font-family: "Mulish", sans-serif;
   cursor: pointer;
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
