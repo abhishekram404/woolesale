@@ -1,16 +1,36 @@
 .checkoutSection {
   border: 1px solid rgba($color: #000000, $alpha: 0.1);
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  height: fit-content;
 }
 
 .grandTotalTitle {
   text-align: center;
   font-family: "Cabin", sans-serif;
-  margin-bottom: 20px;
   font-size: 1.4rem;
 }
 .grandTotal {
   font-size: 2.5rem;
   font-family: "Mulish";
   text-align: center;
+}
+
+.priceDetailsSection {
+  border: 1px solid rgba($color: #000000, $alpha: 0.1);
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.priceDetailsRowContent {
+}
+
+.proceedToCheckoutBtn {
+  width: 100%;
+  text-decoration: none;
+  > button {
+    width: 100%;
+  }
 }
