@@ -24,9 +24,7 @@ const HomepageGridItem = React.memo(
           <h3 className={styles.productPrice}>$ {price}</h3>
           <div className={styles.actionButtonsGroup}>
             <SecondaryButton> Instant buy </SecondaryButton>
-            <PrimaryButton>
-              <MdOutlineAddShoppingCart />
-            </PrimaryButton>
+            <PrimaryButton>Add to cart</PrimaryButton>
           </div>
         </div>
       </motion.div>
