@@ -29,6 +29,17 @@
   }
 }
 
+@media only screen and (max-width: 1200px) {
+  .bodyColumn {
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .bodyColumn {
+    width: 100%;
+  }
+}
+
 .cartSection {
   border: 1px solid rgba($color: #000000, $alpha: 0.1);
   padding: 20px;
