@@ -49,6 +49,15 @@
     margin-right: 10px;
   }
 }
+@media only screen and(max-width:425px) {
+  .register {
+    flex-direction: column;
+    padding: 20px;
+  }
+  .helperSection {
+    width: 100%;
+  }
+}
 @media only screen and(max-width:375px) {
   .register {
     padding: 10px;
