@@ -27,7 +27,7 @@ code {
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 320px) {
   html {
     font-size: 12px;
   }

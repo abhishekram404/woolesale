@@ -41,9 +41,11 @@
 .title {
   margin-bottom: 15px;
 }
-.productPrice {
+.productPrice,
+.total {
   font-family: "Mulish", sans-serif;
   font-weight: 400;
+  font-size: 1rem;
 }
 
 .quantityColumn,
@@ -61,10 +63,6 @@
     border-radius: 1px;
   }
 }
-.total {
-  font-family: "Mulish", sans-serif;
-  font-weight: 500;
-}
 
 @media only screen and (max-width: 1000px) {
   .cartItem {
@@ -75,6 +73,28 @@
     > button {
       width: 30px;
       height: 30px;
+    }
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .cartItem {
+    padding: 12px 0;
+    grid-template-columns: 60px auto 0.2fr 0.2fr;
+    gap: 10px;
+  }
+  .productName,
+  .title {
+    font-size: 1rem;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .quantitySetter {
+    gap: 10px;
+    > button {
+      width: 25px;
+      height: 25px;
+      padding: 2px;
     }
   }
 }

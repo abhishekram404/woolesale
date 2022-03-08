@@ -14,8 +14,27 @@
   grid-template-columns: repeat(auto-fit, minmax(350px, auto));
   gap: 30px;
 }
+@media only screen and(max-width:768px) {
+  .homepage {
+    padding: 20px;
+  }
+  .productsGrid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+  }
+}
 @media only screen and(max-width:640px) {
   .homepage {
     padding: 20px;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .homepage {
+    padding: 10px;
+  }
+  .productsGrid {
+    display: flex;
+    flex-direction: column;
+    // grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    // gap: 20px;
   }
 }
