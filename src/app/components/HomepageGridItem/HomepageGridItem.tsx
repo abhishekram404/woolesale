@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./HomepageGridItem.module.scss";
-import { MdOutlineAddShoppingCart } from "react-icons/md";
 import PrimaryButton from "app/components/Buttons/PrimaryButton/PrimaryButton";
 import SecondaryButton from "app/components/Buttons/SecondaryButton/SecondaryButton";
 import { IHomepageGridItem } from "app/Interfaces/IHomepageGridItem";
