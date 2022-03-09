@@ -73,9 +73,10 @@ const Register = () => {
     email: Yup.string()
       .email("Email is not valid.")
       .required("Email is required."),
-    phone: Yup.number()
-      .min(10, "Phone no. is too short.")
-      .max(13, "Phone number can't be any longer than 13 characters.")
+    phone: Yup.string()
+      .min(10, "Must be at least 10 characters.")
+      .max(14, "Must not be more than 14 characters.")
+      .matches(/[0-9]/, "Phone no. isn't valid.")
       .required("Phone is required."),
     password: Yup.string()
       .min(8, "Password must be at least 8 characters.")
