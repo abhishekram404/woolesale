@@ -1,0 +1,72 @@
+.register {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+  gap: 20px;
+}
+
+.form {
+  border: 1px solid rgba($color: #000000, $alpha: 0.1);
+  padding: 20px;
+  > button[type="submit"] {
+    width: 100%;
+  }
+}
+.formTitle {
+  font-family: "Cabin", sans-serif;
+  margin-bottom: 10px;
+}
+
+.formDescription {
+  font-family: "Mulish", sans-serif;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  font-weight: 300;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba($color: #000000, $alpha: 0.1);
+}
+.helperSection {
+  border: 1px solid rgba($color: #000000, $alpha: 0.1);
+  padding: 15px;
+  > h3 {
+    font-family: "Work Sans";
+    font-weight: 500;
+  }
+}
+
+.passwordRulesList {
+  list-style-type: none;
+}
+
+.passwordRule {
+  margin: 10px 0;
+  font-family: "Mulish", sans-serif;
+  display: flex;
+  align-items: center;
+  > svg {
+    margin-right: 10px;
+  }
+}
+
+@media only screen and(max-width:600px) {
+  .register {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+@media only screen and(max-width:425px) {
+  .register {
+    padding: 20px;
+  }
+  .helperSection {
+    width: 100%;
+  }
+}
+@media only screen and(max-width:375px) {
+  .register {
+    padding: 10px;
+  }
+}
