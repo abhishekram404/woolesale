@@ -18,7 +18,14 @@
   font-weight: 800;
   letter-spacing: 3px;
 }
-
+.secLogo {
+  display: none;
+  background-color: #000;
+  color: #fff;
+  padding: 5px 8px;
+  text-align: center;
+  letter-spacing: 0;
+}
 .navbarNav {
   display: flex;
   align-items: center;
@@ -49,6 +56,12 @@
 @media only screen and(max-width:640px) {
   .navbar {
     padding: 10px 20px;
+  }
+  .mainLogo {
+    display: none;
+  }
+  .secLogo {
+    display: inline;
   }
 }
 

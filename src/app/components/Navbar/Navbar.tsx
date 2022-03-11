@@ -6,7 +6,8 @@ const Navbar = React.memo(() => {
   return (
     <nav className={styles.navbar}>
       <Link to="/" className={styles.navbarBrand}>
-        woolesale
+        <span className={styles.mainLogo}>woolesale</span>
+        <span className={styles.secLogo}>w</span>
       </Link>
       <div className={styles.navbarNav}>
         <Link to="/login" className={styles.navItem} title="Login">
