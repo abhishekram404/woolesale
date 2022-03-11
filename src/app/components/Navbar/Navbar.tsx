@@ -9,6 +9,9 @@ const Navbar = React.memo(() => {
         woolesale
       </Link>
       <div className={styles.navbarNav}>
+        <Link to="/login" className={styles.navItem} title="Login">
+          Login
+        </Link>
         <Link to="/register" className={styles.navItem} title="Register">
           Register
         </Link>
