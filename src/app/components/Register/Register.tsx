@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import InputLabelGroup from "app/components/InputLabelGroup/InputLabelGroup";
 import styles from "./Register.module.scss";
 import PrimaryButton from "../Buttons/PrimaryButton/PrimaryButton";
 import { GrStatusGood, GrFormClose } from "react-icons/gr";
 import { Formik, Form } from "formik";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "app/firebase/firebase";
 import * as Yup from "yup";
+import { AuthContext } from "app/context/AuthContext";
+import { useNavigate } from "react-router-dom";
 const Register = () => {
   const initialValues = {
     email: "",
@@ -15,6 +19,10 @@ const Register = () => {
   const [satisfyNumber, setSatisfyNumber] = useState(false);
   const [satisfySpecialChar, setSatisfySpecialChar] = useState(false);
   const [satisfy8Chars, setSatisfy8Chars] = useState(false);
+  const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const { setUser } = useContext(AuthContext);
 
   const checkUppercase = (text: string) => {
     return /[A-Z]+/.test(text);
@@ -77,9 +85,28 @@ const Register = () => {
       .required("Password is required."),
   });
 
-  const handleSubmit = (values: object) => {
-    console.log(values);
+  const registerUser = async (values: { email: string; password: string }) => {
+    const userCredentials = await createUserWithEmailAndPassword(
+      auth,
+      values.email,
+      values.password
+    );
+    const user = userCredentials?.user;
+
+    if (user) {
+      setUser(user);
+    }
   };
+  const handleSubmit = (values: { email: string; password: string }) => {
+    console.log(values);
+    registerUser(values);
+  };
+
+  useEffect(() => {
+    if (user) {
+      navigate("/");
+    }
+  }, [user]);
   return (
     <Formik
       initialValues={initialValues}
