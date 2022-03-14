@@ -86,15 +86,16 @@ const Register = () => {
   });
 
   const registerUser = async (values: { email: string; password: string }) => {
-    const userCredentials = await createUserWithEmailAndPassword(
-      auth,
-      values.email,
-      values.password
-    );
-    const user = userCredentials?.user;
+    try {
+      const userCredentials = await createUserWithEmailAndPassword(
+        auth,
+        values.email,
+        values.password
+      );
 
-    if (user) {
-      setUser(user);
+      setUser(userCredentials.user);
+    } catch (error: any) {
+      console.log(error.message);
     }
   };
   const handleSubmit = (values: { email: string; password: string }) => {
