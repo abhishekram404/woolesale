@@ -7,9 +7,7 @@ import { Formik, Form } from "formik";
 import * as Yup from "yup";
 const Register = () => {
   const initialValues = {
-    name: "",
     email: "",
-    phone: "",
     password: "",
   };
   const [satisfyUppercase, setSatisfyUppercase] = useState(false);
@@ -66,18 +64,9 @@ const Register = () => {
   };
 
   const validationSchema = Yup.object({
-    name: Yup.string()
-      .max(30, "Name can't be longer than 30 characters.")
-      .min(3, "Name must be minimum 3 characters.")
-      .required("Name is required."),
     email: Yup.string()
       .email("Email is not valid.")
       .required("Email is required."),
-    phone: Yup.string()
-      .min(10, "Must be at least 10 characters.")
-      .max(14, "Must not be more than 14 characters.")
-      .matches(/[0-9]/, "Phone no. isn't valid.")
-      .required("Phone is required."),
     password: Yup.string()
       .min(8, "Password must be at least 8 characters.")
       .max(32, "Password can't be more than 32 characters.")
@@ -101,21 +90,9 @@ const Register = () => {
             Register and become a part of the WooleSale family
           </p>
           <InputLabelGroup
-            name="name"
-            label="Name"
-            type="text"
-            required={true}
-          />
-          <InputLabelGroup
             name="email"
             label="Email"
             type="email"
-            required={true}
-          />
-          <InputLabelGroup
-            name="phone"
-            label="Phone"
-            type="number"
             required={true}
           />
           <InputLabelGroup
