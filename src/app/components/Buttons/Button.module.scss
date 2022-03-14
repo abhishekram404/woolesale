@@ -11,3 +11,7 @@ button {
   align-items: center;
   gap: 10px;
 }
+
+button:disabled {
+  opacity: 0.4 !important;
+}

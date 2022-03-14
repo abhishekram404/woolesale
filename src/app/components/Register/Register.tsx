@@ -77,59 +77,70 @@ const Register = () => {
       .required("Password is required."),
   });
 
+  const handleSubmit = (values: object) => {
+    console.log(values);
+  };
   return (
     <Formik
       initialValues={initialValues}
-      onSubmit={(values) => console.log(values)}
+      onSubmit={(values) => handleSubmit(values)}
       validationSchema={validationSchema}
     >
-      <div className={styles.register}>
-        <Form className={styles.form}>
-          <h2 className={styles.formTitle}>Register</h2>
-          <p className={styles.formDescription}>
-            Register and become a part of the WooleSale family
-          </p>
-          <InputLabelGroup
-            name="email"
-            label="Email"
-            type="email"
-            required={true}
-          />
-          <InputLabelGroup
-            name="password"
-            label="Password"
-            type="password"
-            required={true}
-            onKeyUp={checkPasswordRequirements}
-          />
-          <PrimaryButton type="submit">Register</PrimaryButton>
-        </Form>
-        <section className={styles.helperSection}>
-          <h3>Password requirements</h3>
-          <ul className={styles.passwordRulesList}>
-            <li className={styles.passwordRule}>
-              {satisfyUppercase ? <GrStatusGood /> : <GrFormClose />}
-              At least 1 uppercase letter
-            </li>
-            <li className={styles.passwordRule}>
-              {satisfyLowercase ? <GrStatusGood /> : <GrFormClose />}
-              At least 1 lowercase letter
-            </li>
-            <li className={styles.passwordRule}>
-              {satisfySpecialChar ? <GrStatusGood /> : <GrFormClose />}
-              At least 1 special character
-            </li>
-            <li className={styles.passwordRule}>
-              {satisfyNumber ? <GrStatusGood /> : <GrFormClose />}
-              At least 1 number
-            </li>
-            <li className={styles.passwordRule}>
-              {satisfy8Chars ? <GrStatusGood /> : <GrFormClose />}
-              Must be at least 8 characters long
-            </li>
-          </ul>
-        </section>
-      </div>
+      {(formik) => (
+        <div className={styles.register}>
+          <Form className={styles.form}>
+            <h2 className={styles.formTitle}>Register</h2>
+            <p className={styles.formDescription}>
+              Register and become a part of the WooleSale family
+            </p>
+            <InputLabelGroup
+              name="email"
+              label="Email"
+              type="email"
+              required={true}
+            />
+            <InputLabelGroup
+              name="password"
+              label="Password"
+              type="password"
+              required={true}
+              onKeyUp={checkPasswordRequirements}
+            />
+
+            <PrimaryButton
+              type="submit"
+              disabled={!formik.isValid || !formik.dirty}
+            >
+              Register
+            </PrimaryButton>
+          </Form>
+          <section className={styles.helperSection}>
+            <h3>Password requirements</h3>
+            <ul className={styles.passwordRulesList}>
+              <li className={styles.passwordRule}>
+                {satisfyUppercase ? <GrStatusGood /> : <GrFormClose />}
+                At least 1 uppercase letter
+              </li>
+              <li className={styles.passwordRule}>
+                {satisfyLowercase ? <GrStatusGood /> : <GrFormClose />}
+                At least 1 lowercase letter
+              </li>
+              <li className={styles.passwordRule}>
+                {satisfySpecialChar ? <GrStatusGood /> : <GrFormClose />}
+                At least 1 special character
+              </li>
+              <li className={styles.passwordRule}>
+                {satisfyNumber ? <GrStatusGood /> : <GrFormClose />}
+                At least 1 number
+              </li>
+              <li className={styles.passwordRule}>
+                {satisfy8Chars ? <GrStatusGood /> : <GrFormClose />}
+                Must be at least 8 characters long
+              </li>
+            </ul>
+          </section>
+        </div>
+      )}
     </Formik>
   );
 };
