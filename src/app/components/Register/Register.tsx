@@ -9,6 +9,7 @@ import { auth } from "app/firebase/firebase";
 import * as Yup from "yup";
 import { AuthContext } from "app/context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 const Register = () => {
   const initialValues = {
     email: "",
@@ -87,13 +88,28 @@ const Register = () => {
 
   const registerUser = async (values: { email: string; password: string }) => {
     try {
-      const userCredentials = await createUserWithEmailAndPassword(
-        auth,
-        values.email,
-        values.password
-      );
+      toast.promise(
+        async () => {
+          const userCredentials = await createUserWithEmailAndPassword(
+            auth,
+            values.email,
+            values.password
+          );
 
-      setUser(userCredentials.user);
+          setUser(userCredentials.user);
+        },
+        {
+          success: "Register successful",
+          error: {
+            render({ data }: { data: { message: string } }) {
+              return data.message
+                .replace("Firebase: ", "")
+                .replace("auth/", "");
+            },
+          },
+          pending: "Signing you up",
+        }
+      );
     } catch (error: any) {
       console.log(error.message);
     }
