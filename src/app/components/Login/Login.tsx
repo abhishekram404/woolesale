@@ -27,7 +27,13 @@ const Login = () => {
         },
         {
           success: "Login successful",
-          error: "Login failed",
+          error: {
+            render({ data }: { data: { message: string } }) {
+              return data.message
+                .replace("Firebase: ", "")
+                .replace("auth/", "");
+            },
+          },
           pending: "Logging in",
         }
       );
