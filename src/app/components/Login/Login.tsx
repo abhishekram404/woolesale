@@ -8,6 +8,7 @@ import { auth } from "app/firebase/firebase";
 import { AuthContext } from "app/context/AuthContext";
 import { ILoginState } from "app/Interfaces/ILogin";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 const Login = () => {
   const initialValues = { email: "", password: "" };
   const { user, setUser } = useContext(AuthContext);
@@ -15,14 +16,29 @@ const Login = () => {
 
   const login = async (values: ILoginState) => {
     try {
-      const userCredentials = await signInWithEmailAndPassword(
-        auth,
-        values.email,
-        values.password
+      toast.promise(
+        async () => {
+          const userCredentials = await signInWithEmailAndPassword(
+            auth,
+            values.email,
+            values.password
+          );
+          return setUser(userCredentials.user);
+        },
+        {
+          success: "Login successful",
+          error: {
+            render({ data }: { data: { message: string } }) {
+              return data.message
+                .replace("Firebase: ", "")
+                .replace("auth/", "");
+            },
+          },
+          pending: "Logging in",
+        }
       );
-      setUser(userCredentials.user);
     } catch (error: any) {
-      console.log(error.message);
+      return console.log(error.message);
     }
   };
 

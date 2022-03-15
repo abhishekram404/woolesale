@@ -4,6 +4,7 @@ import styles from "./Navbar.module.scss";
 import { Link } from "react-router-dom";
 import { AuthContext } from "app/context/AuthContext";
 import useSignOut from "app/hooks/useSignOut";
+import PrimaryButton from "app/components/Buttons/PrimaryButton/PrimaryButton";
 const Navbar = React.memo(() => {
   const { user } = useContext(AuthContext);
   const { signOutUser } = useSignOut();
@@ -37,7 +38,7 @@ const Navbar = React.memo(() => {
               Login
             </Link>
             <Link to="/register" className={styles.navItem} title="Register">
-              Register
+              <PrimaryButton>Register</PrimaryButton>
             </Link>
           </>
         )}
