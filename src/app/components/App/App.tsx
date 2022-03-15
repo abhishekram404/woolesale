@@ -28,6 +28,7 @@ function App() {
         closeOnClick
         rtl={false}
         draggable
+        pauseOnFocusLoss={false}
         pauseOnHover
       />{" "}
     </AuthContext.Provider>
