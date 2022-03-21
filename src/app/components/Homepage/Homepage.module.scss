@@ -13,6 +13,10 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, auto));
   gap: 30px;
+  a {
+    text-decoration: none;
+    color: unset;
+  }
 }
 @media only screen and(max-width:768px) {
   .homepage {
