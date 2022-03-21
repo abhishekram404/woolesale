@@ -1,10 +1,10 @@
 import React from "react";
-import BackButton from "app/components/BackButton/BackButton";
 import styles from "./Cart.module.scss";
 import CartItem from "app/components/CartItem/CartItem";
 import { Link } from "react-router-dom";
 import CheckoutSection from "app/components/CheckoutSection/CheckoutSection";
 import { motion, AnimatePresence } from "framer-motion";
+import PageTitleRow from "app/components/PageTitleRow/PageTitleRow";
 const Cart = React.memo(() => {
   return (
     <AnimatePresence>
@@ -18,10 +18,7 @@ const Cart = React.memo(() => {
         exit={{ x: "1000px" }}
         transition={{ stiffness: 0 }}
       >
-        <div className={styles.pageTitleRow}>
-          <BackButton />
-          <h2 className={styles.pageTitle}>Cart</h2>
-        </div>
+        <PageTitleRow>Cart</PageTitleRow>
         <main className={styles.bodyColumn}>
           <section className={styles.cartSection}>
             <div className={styles.summaryRow}>

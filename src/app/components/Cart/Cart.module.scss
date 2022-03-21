@@ -4,20 +4,6 @@
   z-index: 1;
 }
 
-.pageTitleRow {
-  display: grid;
-  align-items: center;
-  grid-template-columns: 100px 0.85fr;
-  border-bottom: 1px solid rgba($color: #000000, $alpha: 0.1);
-  padding-bottom: 20px;
-}
-
-.pageTitle {
-  font-family: "Cabin", sans-serif;
-  font-size: 2rem;
-  margin: 0 auto;
-}
-
 .bodyColumn {
   width: 80%;
   margin: 0 auto;

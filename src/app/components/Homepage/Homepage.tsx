@@ -20,12 +20,11 @@ export default function Homepage() {
         <main className={styles.productsGrid}>
           <AnimatePresence>
             {products.map((product, index) => (
-              <Link to={`/product/${index}`}>
+              <Link to={`/product/${index}`} key={index}>
                 <HomepageGridItem
                   name={product.name}
                   price={product.price}
                   productImages={product.productImages}
-                  key={index}
                   initial={{ scale: 1.1, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   // viewport={{ once: true }}

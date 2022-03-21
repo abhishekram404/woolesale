@@ -1,9 +1,10 @@
 import React from "react";
 import styles from "./ViewProduct.module.scss";
+import PageTitleRow from "../PageTitleRow/PageTitleRow";
 const ViewProduct = () => {
   return (
     <div className={styles.viewProduct}>
-      <h1>Products</h1>
+      <PageTitleRow>View Product</PageTitleRow>
     </div>
   );
 };
