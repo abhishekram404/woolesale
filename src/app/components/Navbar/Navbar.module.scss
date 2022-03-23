@@ -35,7 +35,11 @@
   font-family: "Mulish", sans-serif;
   text-decoration: none;
   color: black;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .cartButton {
   text-decoration: none;

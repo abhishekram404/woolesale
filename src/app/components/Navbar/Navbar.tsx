@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "app/context/AuthContext";
 import useSignOut from "app/hooks/useSignOut";
 import PrimaryButton from "app/components/Buttons/PrimaryButton/PrimaryButton";
+import { AiOutlineLogout, AiOutlineUser } from "react-icons/ai";
 const Navbar = React.memo(() => {
   const { user } = useContext(AuthContext);
   const { signOutUser } = useSignOut();
@@ -21,12 +22,15 @@ const Navbar = React.memo(() => {
       <div className={styles.navbarNav}>
         {user ? (
           <>
+            <Link to="/profile" className={styles.navItem} title="Profile">
+              <AiOutlineUser />
+            </Link>
             <button
               className={styles.navItem}
               title="Logout"
               onClick={logoutHandler}
             >
-              Logout
+              <AiOutlineLogout />
             </button>
             <Link to="/cart" className={styles.cartButton} title="View cart">
               <MdOutlineShoppingCart />

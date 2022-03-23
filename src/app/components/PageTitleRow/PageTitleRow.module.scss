@@ -1,13 +1,23 @@
 .pageTitleRow {
   display: grid;
   align-items: center;
-  grid-template-columns: 100px 0.85fr 100px;
+  grid-template-columns: 100px 1fr 100px;
   border-bottom: 1px solid rgba($color: #000000, $alpha: 0.1);
   padding-bottom: 20px;
 }
 
 .pageTitle {
   font-family: "Cabin", sans-serif;
-  font-size: 2rem;
+  font-size: 1.6rem;
   margin: 0 auto;
+  text-align: center;
+}
+
+@media only screen and (max-width: 640px) {
+  .pageTitleRow {
+    grid-template-columns: 80px 1fr 70px;
+  }
+  .pageTitle {
+    font-size: 1.1rem;
+  }
 }
