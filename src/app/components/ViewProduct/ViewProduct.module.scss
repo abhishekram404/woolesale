@@ -25,7 +25,7 @@
   align-items: center;
   flex-direction: column;
   gap: 30px;
-  max-height: 600px;
+  max-height: 800px;
 }
 .productImageActive {
   max-width: 60%;
@@ -34,6 +34,7 @@
 
 .productImagesOptions {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
 }
 
