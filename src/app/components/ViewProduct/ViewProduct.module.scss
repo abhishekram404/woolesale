@@ -6,11 +6,17 @@
   display: grid;
   grid-template-columns: 600px 1fr;
   gap: 30px;
+  width: 80%;
+  margin: 0 auto;
   > section {
     border: 1px solid rgba($color: #000000, $alpha: 0.1);
     // overflow: hidden;
     padding: 20px;
   }
+}
+.hr {
+  border: 1px solid rgba($color: #000000, $alpha: 0.1);
+  margin: 10px 0;
 }
 
 .productImagesSection {
@@ -57,4 +63,30 @@
   font-family: "Mulish", sans-serif;
   color: #2e2e2e;
   margin-top: 1rem;
+  margin-bottom: 20px;
+}
+
+.stock {
+  margin-top: 10px;
+  font-family: "Mulish", sans-serif;
+  color: #09ad09;
+}
+
+.aboutSection {
+  max-width: 600px;
+  > h4 {
+    font-family: "Cabin", sans-serif;
+    font-size: 1.2rem;
+  }
+  > p {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    line-height: 1.6rem;
+    font-family: "Mulish", sans-serif;
+  }
+}
+.actionButtons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }

@@ -7,3 +7,7 @@ export const productName: string;
 export const productPrice: string;
 export const productImagesOptions: string;
 export const productImagesItem: string;
+export const stock: string;
+export const aboutSection: string;
+export const hr: string;
+export const actionButtons: string;
