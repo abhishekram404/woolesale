@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 import PrimaryButton from "../Buttons/PrimaryButton/PrimaryButton";
 import SecondaryButton from "../Buttons/SecondaryButton/SecondaryButton";
 import ImagePreview from "app/components/ImagePreview/ImagePreview";
-const ViewProduct = () => {
+const ViewProduct = React.memo(() => {
   const { id = "0" } = useParams<{ id: string }>();
   console.log(id);
   const product = products[+id];
@@ -45,5 +45,5 @@ const ViewProduct = () => {
       </main>
     </div>
   );
-};
+});
 export default ViewProduct;
