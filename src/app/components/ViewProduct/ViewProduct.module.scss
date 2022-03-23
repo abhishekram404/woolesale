@@ -91,3 +91,24 @@
   gap: 10px;
   align-items: center;
 }
+
+@media only screen and (max-width: 1440px) {
+  .productArea {
+    width: 100%;
+    grid-template-columns: 500px 1fr;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .productArea {
+    grid-template-columns: 300px 1fr;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .productArea {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .viewProduct {
+    padding: 10px;
+  }
+}
