@@ -14,7 +14,8 @@
   display: grid;
   place-items: center;
   align-self: center;
-  > img {
+  > img,
+  svg {
     max-width: 45px;
     max-height: 45px;
   }

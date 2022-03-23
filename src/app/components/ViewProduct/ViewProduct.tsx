@@ -5,6 +5,7 @@ import { products } from "app/productsData";
 import { useParams } from "react-router-dom";
 import PrimaryButton from "../Buttons/PrimaryButton/PrimaryButton";
 import SecondaryButton from "../Buttons/SecondaryButton/SecondaryButton";
+import ImagePreview from "app/components/ImagePreview/ImagePreview";
 const ViewProduct = () => {
   const { id = "0" } = useParams<{ id: string }>();
   console.log(id);
@@ -14,20 +15,7 @@ const ViewProduct = () => {
     <div className={styles.viewProduct}>
       <PageTitleRow>View Product</PageTitleRow>
       <main className={styles.productArea}>
-        <section className={styles.productImagesSection}>
-          <img
-            src={product.productImages[0]}
-            alt="product"
-            className={styles.productImageActive}
-          />
-          <div className={styles.productImagesOptions}>
-            {product.productImages.map((image, index) => (
-              <span key={index} className={styles.productImagesItem}>
-                <img src={image} alt="product" />
-              </span>
-            ))}
-          </div>
-        </section>
+        <ImagePreview productImages={product.productImages} />
         <section className={styles.productDetailsSection}>
           <h2 className={styles.productName}>{product.name}</h2>
           <p className={styles.stock}>Currently in stock</p>

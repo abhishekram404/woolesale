@@ -42,7 +42,7 @@ export const products = [
   {
     name: "Canon Professional quality camera",
     price: 839,
-    productImages: [camera],
+    productImages: [],
   },
   {
     name: "Oneplus Nord",
