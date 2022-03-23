@@ -1,13 +1,15 @@
 import React from "react";
 import { MdArrowBackIosNew } from "react-icons/md";
-import { Link } from "react-router-dom";
 import styles from "./BackButton.module.scss";
+import { useNavigate } from "react-router-dom";
 
 const BackButton = React.memo(() => {
+  const navigate = useNavigate();
+  const goBack = () => navigate(-1);
   return (
-    <Link to="/" className={styles.backBtn}>
+    <div role="button" onClick={goBack} className={styles.backBtn}>
       <MdArrowBackIosNew /> Go back
-    </Link>
+    </div>
   );
 });
 
