@@ -1,0 +1,80 @@
+.ordersListItem {
+  padding: 15px 0;
+  display: grid;
+  grid-template-columns: 60px 0.4fr 0.3fr 0.3fr;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.imgCont {
+  width: 60px;
+  height: 60px;
+  padding: 5px;
+  border: 1px solid rgba($color: #000000, $alpha: 0.1);
+  display: grid;
+  place-items: center;
+  align-self: center;
+  > img,
+  svg {
+    max-width: 45px;
+    max-height: 45px;
+  }
+}
+.detailsColumn {
+  align-self: center;
+}
+
+.detailsColumn,
+.quantityColumn,
+.totalColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.productName,
+.title {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 500;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+.title {
+  margin-bottom: 15px;
+}
+.productPrice,
+.total {
+  font-family: "Mulish", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.quantityColumn,
+.totalColumn {
+  align-items: center;
+}
+
+@media only screen and (max-width: 1280px) {
+  .productName,
+  .title {
+    font-size: 1rem;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .ordersListItem {
+    gap: 10px;
+    // grid-template-columns: 60px auto 0.2fr 0.2fr;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .ordersListItem {
+    padding: 12px 0;
+    // grid-template-columns: 60px auto 0.2fr 0.2fr;
+    gap: 10px;
+  }
+  .productName,
+  .title {
+    font-size: 1rem;
+  }
+}

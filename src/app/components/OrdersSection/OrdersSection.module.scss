@@ -1,0 +1,38 @@
+.ordersSection {
+}
+
+.sectionTitle {
+  font-family: "Cabin", sans-serif;
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+
+.sectionDescription {
+  font-family: "Mulish", sans-serif;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  font-weight: 300;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba($color: #000000, $alpha: 0.1);
+}
+
+.ordersListSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.ordersList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.ordersListItem {
+  border-bottom: 1px solid rgba($color: #000000, $alpha: 0.1);
+  padding: 0 10px 10px;
+}
+
+.noOrder {
+  align-self: center;
+  justify-self: center;
+}
