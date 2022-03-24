@@ -6,6 +6,7 @@ import { GrStatusGood, GrFormClose } from "react-icons/gr";
 import { Formik, Form } from "formik";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "app/firebase/firebase";
+
 import * as Yup from "yup";
 import { AuthContext } from "app/context/AuthContext";
 import { useNavigate } from "react-router-dom";
@@ -90,13 +91,11 @@ const Register = () => {
     try {
       toast.promise(
         async () => {
-          const userCredentials = await createUserWithEmailAndPassword(
+          await createUserWithEmailAndPassword(
             auth,
             values.email,
             values.password
           );
-
-          setUser(userCredentials.user);
         },
         {
           success: "Register successful",
@@ -114,9 +113,9 @@ const Register = () => {
       console.log(error.message);
     }
   };
-  const handleSubmit = (values: { email: string; password: string }) => {
-    console.log(values);
-    registerUser(values);
+
+  const handleSubmit = async (values: { email: string; password: string }) => {
+    await registerUser(values);
   };
 
   useEffect(() => {

@@ -1,0 +1,12 @@
+.emailVerification {
+  padding: 10px;
+  font-family: "Cabin", sans-serif;
+  font-weight: 400;
+  > button {
+    display: inline;
+    background-color: transparent;
+    color: rgb(17, 184, 17);
+    font-weight: 800;
+    padding: 0 5px;
+  }
+}

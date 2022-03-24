@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import TopNavbar from "app/components/TopNavbar/TopNavbar";
 import Navbar from "app/components/Navbar/Navbar";
 import Homepage from "app/components/Homepage/Homepage";
@@ -10,9 +10,28 @@ import Login from "app/components/Login/Login";
 import ViewProduct from "app/components/ViewProduct/ViewProduct";
 import Profile from "app/components/Profile/Profile";
 import Footer from "app/components/Footer/Footer";
+import { auth } from "app/firebase/firebase";
+import styles from "./Layout.module.scss";
+import { sendEmailVerification } from "firebase/auth";
+import { AuthContext } from "app/context/AuthContext";
 const Layout = React.memo(() => {
+  const { user } = useContext(AuthContext);
+  console.log(auth);
+  const verifyEmail = () => {
+    if (auth.currentUser) {
+      sendEmailVerification(auth.currentUser);
+      alert("Verification email sent");
+    }
+  };
   return (
     <Router>
+      {user && !user.emailVerified && (
+        <h4 className={styles.emailVerification}>
+          Please verify your email address. Click{" "}
+          <button onClick={verifyEmail}>here</button>
+          to send a verification link to your email.
+        </h4>
+      )}
       <TopNavbar />
       <Navbar />
 

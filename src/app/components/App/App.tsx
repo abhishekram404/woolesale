@@ -5,9 +5,10 @@ import { auth } from "app/firebase/firebase";
 import { AuthContext } from "app/context/AuthContext";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import firebase from "firebase/auth";
 
 function App() {
-  const [user, setUser] = useState<object | null>(null);
+  const [user, setUser] = useState<firebase.User | null>(null);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, () => {
