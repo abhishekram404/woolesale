@@ -6,7 +6,6 @@
 .pageTitle {
   font-family: "Cabin", sans-serif;
   color: rgba($color: #000000, $alpha: 0.9);
-  margin-bottom: 20px;
 }
 
 .productsGrid {
@@ -18,6 +17,22 @@
     color: unset;
   }
 }
+
+.pageTitleAndSearchRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.searchBox {
+  font-size: 1rem;
+  padding: 5px 10px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid rgba($color: #000000, $alpha: 0.3);
+  font-family: "Mulish";
+}
+
 @media only screen and(max-width:768px) {
   .homepage {
     padding: 20px;

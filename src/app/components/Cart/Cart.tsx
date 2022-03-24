@@ -34,8 +34,8 @@ const Cart = React.memo(() => {
                 Checkout
               </Link>
             </div>
-            {cart.map((item) => (
-              <CartItem {...item} />
+            {cart.map((item, index) => (
+              <CartItem {...item} key={index} />
             ))}
           </section>
           <CheckoutSection />

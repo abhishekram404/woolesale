@@ -16,7 +16,14 @@ export default function Homepage() {
         animate="show"
         exit={{ opacity: 0 }}
       >
-        <h2 className={styles.pageTitle}>Featured products</h2>
+        <div className={styles.pageTitleAndSearchRow}>
+          <h2 className={styles.pageTitle}>Featured products</h2>
+          <input
+            type="search"
+            className={styles.searchBox}
+            placeholder="Find  product"
+          />
+        </div>
         <main className={styles.productsGrid}>
           <AnimatePresence>
             {products.map((product, index) => (
