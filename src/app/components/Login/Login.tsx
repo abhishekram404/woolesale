@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import styles from "app/components/Register/Register.module.scss";
 import InputLabelGroup from "../InputLabelGroup/InputLabelGroup";
 import { Formik, Form } from "formik";

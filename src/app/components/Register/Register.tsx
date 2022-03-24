@@ -24,8 +24,6 @@ const Register = () => {
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  const { setUser } = useContext(AuthContext);
-
   const checkUppercase = (text: string) => {
     return /[A-Z]+/.test(text);
   };

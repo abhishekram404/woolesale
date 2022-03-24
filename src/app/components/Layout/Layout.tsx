@@ -14,6 +14,7 @@ import { auth } from "app/firebase/firebase";
 import styles from "./Layout.module.scss";
 import { sendEmailVerification } from "firebase/auth";
 import { AuthContext } from "app/context/AuthContext";
+import ProtectedComponent from "app/components/ProtectedComponent/ProtectedComponent";
 const Layout = React.memo(() => {
   const { user } = useContext(AuthContext);
   console.log(auth);
@@ -41,8 +42,14 @@ const Layout = React.memo(() => {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<PageNotFound />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route
+          path="/cart"
+          element={<ProtectedComponent outlet={<Cart />} />}
+        />
+        <Route
+          path="/profile"
+          element={<ProtectedComponent outlet={<Profile />} />}
+        />
       </Routes>
       <Footer />
     </Router>
