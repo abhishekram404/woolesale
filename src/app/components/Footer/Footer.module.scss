@@ -1,0 +1,44 @@
+.footer {
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+  > section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+}
+
+.woolesaleLogo {
+  filter: invert(1);
+  width: 200px;
+  height: 200px;
+}
+.woolesaleBrandName {
+  color: #fff;
+  font-size: 2.5rem;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+.sellLink {
+  text-decoration: none;
+  color: white;
+  font-family: "Mulish", sans-serif;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .footer {
+    flex-direction: column-reverse;
+  }
+}

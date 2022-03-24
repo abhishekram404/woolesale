@@ -9,6 +9,7 @@ import Register from "app/components/Register/Register";
 import Login from "app/components/Login/Login";
 import ViewProduct from "app/components/ViewProduct/ViewProduct";
 import Profile from "app/components/Profile/Profile";
+import Footer from "app/components/Footer/Footer";
 const Layout = React.memo(() => {
   return (
     <Router>
@@ -24,6 +25,7 @@ const Layout = React.memo(() => {
         <Route path="/cart" element={<Cart />} />
         <Route path="/profile" element={<Profile />} />
       </Routes>
+      <Footer />
     </Router>
   );
 });
