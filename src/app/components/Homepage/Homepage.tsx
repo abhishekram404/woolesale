@@ -25,11 +25,11 @@ export default function Homepage() {
                   name={product.name}
                   price={product.price}
                   productImages={product.productImages}
-                  initial={{ scale: 1.1, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  // viewport={{ once: true }}
-                  style={{ originX: 0.5, originY: 0.5 }}
-                  transition={{ delay: index * 0.3 }}
+                  // initial={{ scale: 1.1, opacity: 0 }}
+                  // animate={{ scale: 1, opacity: 1 }}
+                  // // viewport={{ once: true }}
+                  // style={{ originX: 0.5, originY: 0.5 }}
+                  // transition={{ delay: index * 0.3 }}
                 />
               </Link>
             ))}

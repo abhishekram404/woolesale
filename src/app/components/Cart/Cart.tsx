@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import CheckoutSection from "app/components/CheckoutSection/CheckoutSection";
 import { motion, AnimatePresence } from "framer-motion";
 import PageTitleRow from "app/components/PageTitleRow/PageTitleRow";
+import { cart } from "app/cartData";
+
 const Cart = React.memo(() => {
   return (
     <AnimatePresence>
@@ -23,7 +25,7 @@ const Cart = React.memo(() => {
           <section className={styles.cartSection}>
             <div className={styles.summaryRow}>
               <p className={styles.cartSummary}>
-                You have 6 items in your cart.
+                You have {cart.length} items in your cart.
               </p>
               <Link
                 to="#checkoutSection"
@@ -32,12 +34,9 @@ const Cart = React.memo(() => {
                 Checkout
               </Link>
             </div>
-            <CartItem />
-            <CartItem />
-            <CartItem />
-            <CartItem />
-            <CartItem />
-            <CartItem />
+            {cart.map((item) => (
+              <CartItem {...item} />
+            ))}
           </section>
           <CheckoutSection />
         </main>
