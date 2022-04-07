@@ -2,7 +2,6 @@ import React from "react";
 import styles from "app/components/Register/Register.module.scss";
 import inputStyles from "../InputLabelGroup/InputLabelGroup.module.scss";
 import PrimaryButton from "../Buttons/PrimaryButton/PrimaryButton";
-import SecondaryButton from "../Buttons/SecondaryButton/SecondaryButton";
 const PasswordReset = React.memo(() => {
   return (
     <div className={styles.register}>
