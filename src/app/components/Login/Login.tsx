@@ -7,7 +7,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "app/firebase/firebase";
 import { AuthContext } from "app/context/AuthContext";
 import { ILoginState } from "app/Interfaces/ILogin";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 const Login = () => {
   const initialValues = { email: "", password: "" };
@@ -64,6 +64,9 @@ const Login = () => {
           <InputLabelGroup name="email" label="Email" type="email" />
           <InputLabelGroup name="password" label="Password" type="password" />
           <PrimaryButton type="submit">Login</PrimaryButton>
+          <p className={styles.passwordResetRow}>
+            Forgot your password? <Link to="/reset-password">Reset here</Link>{" "}
+          </p>
         </Form>
       </div>
     </Formik>

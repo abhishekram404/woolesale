@@ -7,3 +7,4 @@ export const registerBtn: string;
 export const helperSection: string;
 export const passwordRulesList: string;
 export const passwordRule: string;
+export const passwordResetRow: string;
