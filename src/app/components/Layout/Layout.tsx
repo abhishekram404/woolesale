@@ -15,6 +15,7 @@ import styles from "./Layout.module.scss";
 import { sendEmailVerification } from "firebase/auth";
 import { AuthContext } from "app/context/AuthContext";
 import ProtectedComponent from "app/components/ProtectedComponent/ProtectedComponent";
+import PasswordReset from "app/components/PasswordReset/PasswordReset";
 const Layout = React.memo(() => {
   const { user } = useContext(AuthContext);
   console.log(auth);
@@ -41,6 +42,7 @@ const Layout = React.memo(() => {
         <Route path="/product/:id" element={<ViewProduct />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/reset-password" element={<PasswordReset />} />
         <Route path="*" element={<PageNotFound />} />
         <Route
           path="/cart"
