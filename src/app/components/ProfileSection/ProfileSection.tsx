@@ -1,21 +1,38 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import formStyles from "app/components/Register/Register.module.scss";
 import { Formik, Form } from "formik";
 import styles from "./ProfileSection.module.scss";
 import InputLabelGroup from "app/components/InputLabelGroup/InputLabelGroup";
 import PrimaryButton from "app/components/Buttons/PrimaryButton/PrimaryButton";
+import { getAuth } from "firebase/auth";
 const ProfileSection = () => {
-  const initialValues = {
+  const auth = getAuth();
+
+  const [userInfo, setUserInfo] = useState({
     name: "",
     email: "",
     phone: "",
     address: "",
     zip: "",
-  };
+  });
+
+  useEffect(() => {
+    setUserInfo({
+      ...userInfo,
+      email: auth.currentUser?.email || "",
+      name: auth.currentUser?.displayName || "",
+      phone: auth.currentUser?.phoneNumber || "",
+      // address : auth.currentUser?.
+    });
+
+    console.log(auth.currentUser?.email || "");
+  }, [auth.currentUser]);
+
   return (
     <Formik
-      initialValues={initialValues}
+      initialValues={userInfo}
       onSubmit={(values: any) => console.log(values)}
+      enableReinitialize
     >
       <Form className={styles.profileSection}>
         <h1 className={formStyles.formTitle}>Your information</h1>
