@@ -1,11 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import HomepageGridItem from "app/components/HomepageGridItem/HomepageGridItem";
 import styles from "./Homepage.module.scss";
 import { products } from "app/productsData";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
+import { IProduct } from "app/Interfaces/IProduct";
 
 export default function Homepage() {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searchResult, setSearchResult] = useState<IProduct[]>([]);
+
+  const handleSearchQueryChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(e.target.value);
+    debounce(() => console.log("Helo"), 500);
+  };
+
+  const debounce = (fn: Function, delay: number) => {
+    let timeout: NodeJS.Timeout;
+    return (...params: any) => {
+      if (timeout) clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        fn(params);
+      }, delay);
+    };
+  };
+
   return (
     <AnimatePresence>
       <motion.div
@@ -22,6 +41,8 @@ export default function Homepage() {
             type="search"
             className={styles.searchBox}
             placeholder="Find  product"
+            value={searchQuery}
+            onChange={handleSearchQueryChange}
           />
         </div>
         <main className={styles.productsGrid}>
