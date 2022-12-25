@@ -6,18 +6,34 @@ import { AuthContext } from "app/context/AuthContext";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import firebase from "firebase/auth";
+import sanityClient from 'utils/sanity'
 
 function App() {
   const [user, setUser] = useState<firebase.User | null>(null);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, () => {
-      console.log("auth changed", auth);
+
       setUser(auth.currentUser);
     });
 
     return unsubscribe;
   }, []);
+  
+  // "images" : [images.image.asset->url]
+  useEffect(()=> {
+    sanityClient.fetch(`
+     *[_type=="product"]{
+       _id,
+        _createdAt,
+        name,
+        price,
+        stockQuantity,
+        description,
+      images[]{"url":asset->url}}
+      `).then((data:any) => console.dir(data))
+  },[])
+  
   return (
     <AuthContext.Provider value={{ user, setUser }}>
       <Layout />

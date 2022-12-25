@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@sanity/client": "^3.4.1",
     "@types/node": "^16.11.26",
     "@types/node-sass": "^4.11.2",
     "@types/react": "^17.0.39",

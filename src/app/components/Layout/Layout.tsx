@@ -18,7 +18,7 @@ import ProtectedComponent from "app/components/ProtectedComponent/ProtectedCompo
 import PasswordReset from "app/components/PasswordReset/PasswordReset";
 const Layout = React.memo(() => {
   const { user } = useContext(AuthContext);
-  console.log(auth);
+
   const verifyEmail = () => {
     if (auth.currentUser) {
       sendEmailVerification(auth.currentUser);
