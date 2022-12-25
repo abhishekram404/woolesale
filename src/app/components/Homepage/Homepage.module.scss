@@ -33,7 +33,7 @@
   font-family: "Mulish", sans-serif;
 }
 
-@media only screen and(max-width:768px) {
+@media only screen and (max-width:768px) {
   .homepage {
     padding: 20px;
   }
@@ -41,7 +41,7 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, auto));
   }
 }
-@media only screen and(max-width:640px) {
+@media only screen and (max-width:640px) {
   .homepage {
     padding: 20px;
   }
