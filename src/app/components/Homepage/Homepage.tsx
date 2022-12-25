@@ -1,14 +1,30 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import HomepageGridItem from "app/components/HomepageGridItem/HomepageGridItem";
 import styles from "./Homepage.module.scss";
-import { products } from "app/productsData";
+// import { products } from "app/productsData";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { IProduct } from "app/Interfaces/IProduct";
+import sanityClient from 'app/utils/sanity'
+import {useFetch}  from 'app/hooks/useFetch'
 
 export default function Homepage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResult, setSearchResult] = useState<IProduct[]>([]);
+  const query = `
+     *[_type=="product"]{
+       _id,
+        _createdAt,
+        name,
+        price,
+        stockQuantity,
+        description,
+      images[]{"url":asset->url}}
+      `
+  const  {response: products, isLoading}: {response : IProduct[], isLoading : boolean} = useFetch(query)
+  
+  
+  
 
   const handleSearchQueryChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value);
@@ -24,6 +40,8 @@ export default function Homepage() {
       }, delay);
     };
   };
+  
+  if(!products || isLoading) return <h4>Loading...</h4>
 
   return (
     <AnimatePresence>
@@ -48,11 +66,11 @@ export default function Homepage() {
         <main className={styles.productsGrid}>
           <AnimatePresence>
             {products.map((product, index) => (
-              <Link to={`/product/${index}`} key={index}>
+              <Link to={`/product/${product._id}`} key={product._id}>
                 <HomepageGridItem
                   name={product.name}
                   price={product.price}
-                  productImages={product.productImages}
+                  productImageUrl={product.images[0].url}
                   // initial={{ scale: 1.1, opacity: 0 }}
                   // animate={{ scale: 1, opacity: 1 }}
                   // // viewport={{ once: true }}

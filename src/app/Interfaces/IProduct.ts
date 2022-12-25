@@ -1,6 +1,7 @@
 export interface IProduct {
-  id: string;
+  _id: string;
   name: string;
   price: number;
-  productImages: string[];
+  images: {url : string}[];
+  _createdAt : Date
 }

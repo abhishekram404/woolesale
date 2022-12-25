@@ -5,13 +5,13 @@ import SecondaryButton from "app/components/Buttons/SecondaryButton/SecondaryBut
 import { IHomepageGridItem } from "app/Interfaces/IHomepageGridItem";
 import { motion } from "framer-motion";
 const HomepageGridItem = React.memo(
-  ({ name, price, productImages, ...props }: IHomepageGridItem) => {
+  ({ name, price, productImageUrl, ...props }: IHomepageGridItem) => {
     return (
       <motion.div className={styles.homepageGridItem} {...props}>
         <div className={styles.productImageContainer}>
-          {productImages[0] ? (
+          {productImageUrl ? (
             <img
-              src={productImages[0]}
+              src={productImageUrl}
               className={styles.productImage}
               alt="product"
             />
