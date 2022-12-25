@@ -1,6 +1,7 @@
 export interface ICartItem {
   name: string;
   price: number;
-  productImages: string[];
+  images: {url : string}[];
+  quantity : number;
   [key: string]: any;
 }

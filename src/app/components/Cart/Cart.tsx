@@ -6,8 +6,36 @@ import CheckoutSection from "app/components/CheckoutSection/CheckoutSection";
 import { motion, AnimatePresence } from "framer-motion";
 import PageTitleRow from "app/components/PageTitleRow/PageTitleRow";
 import { cart } from "app/cartData";
+import {useFetch} from 'app/hooks/useFetch'
 
 const Cart = React.memo(() => {
+  const query = `
+  *[_type=="cart" && owner=="ramabishek40@gmail.com"][0]{
+  owner,
+  cartItems[]{
+    quantity,
+    "product" : {
+      ...product-> {
+        name,
+        price,
+        images[]{
+          "url" : asset->url 
+        } 
+      }  
+    }  
+  }
+}`
+  
+  let {response, isLoading} = useFetch(query)
+  
+  response = response?.cartItems.map((item:any) => ({
+    ...item.product, quantity : item.quantity
+  }))
+  
+  if(isLoading) return <h3>Loading...</h3>
+  
+  
+  console.log(response)
   return (
     <AnimatePresence>
       <motion.div
@@ -25,7 +53,7 @@ const Cart = React.memo(() => {
           <section className={styles.cartSection}>
             <div className={styles.summaryRow}>
               <p className={styles.cartSummary}>
-                You have {cart.length} items in your cart.
+                You have {response.length} items in your cart.
               </p>
               <Link
                 to="#checkoutSection"
@@ -34,7 +62,7 @@ const Cart = React.memo(() => {
                 Checkout
               </Link>
             </div>
-            {cart.map((item, index) => (
+            {response?.map((item:any, index: number) => (
               <CartItem {...item} key={index} />
             ))}
           </section>

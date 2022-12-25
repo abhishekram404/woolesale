@@ -6,8 +6,8 @@ import { FiPlus } from "react-icons/fi";
 import { HiMinus } from "react-icons/hi";
 import { ICartItem } from "app/Interfaces/ICartItem";
 
-const CartItem = React.memo(({ name, price, productImages }: ICartItem) => {
-  const [quantity, setQuantity] = useState(1);
+const CartItem = React.memo(({ name, price, images, quantity:initialQuantity }: ICartItem) => {
+  const [quantity, setQuantity] = useState(initialQuantity || 1);
 
   const increment = () => setQuantity((quantity) => quantity + 1);
 
@@ -20,8 +20,8 @@ const CartItem = React.memo(({ name, price, productImages }: ICartItem) => {
   return (
     <div className={styles.cartItem}>
       <div className={styles.imgCont}>
-        {productImages[0] ? (
-          <img src={productImages[0]} alt="" />
+        {images?.[0] ? (
+          <img src={images[0]?.url} alt="" />
         ) : (
           <svg
             width="512"
